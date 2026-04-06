@@ -51,3 +51,14 @@ Créer une infrastructure cognitive auto-hébergée (NAS) capable d'absorber, de
 * **Zéro Cloud :** Aucune donnée ne quitte le NAS pour l'IA.
 * **MFA :** Accès externe protégé par Double Authentification.
 * **Backups :** Snapshot 3-2-1 automatique sur disque externe.
+
+## 🧠 The AI Brain Setup (Zero-Cost Strategy)
+
+Pour éviter les frais d'API Anthropic/OpenAI, nous utilisons une architecture de "Routage Fantôme" :
+
+1. **Inference Server :** Ollama (Docker) tournant sur le NAS.
+2. **Model Selection :** - `deepseek-v3` pour le brainstorming d'idées.
+   - `qwen2.5-coder` pour l'analyse des schémas techniques.
+3. **Claude Emulation :** Configuration de la variable `ANTHROPIC_BASE_URL` pour pointer vers notre IP locale.
+   
+> **Note pour l'équipe :** On ne paie RIEN. La seule limite, c'est la RAM du NAS. Si ça rame, on passe sur des versions quantifiées (GGUF) des modèles.
